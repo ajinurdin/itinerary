@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Trip Pamulang - Karang Hawu</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        sunset: {
+                            100: '#ffe4d6',
+                            500: '#ff7e5f',
+                            600: '#feb47b',
+                            900: '#8a2b0d'
+                        },
+                        ocean: {
+                            500: '#00c6ff',
+                            600: '#0072ff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #f3f4f6;
+            -webkit-tap-highlight-color: transparent;
+        }
+        /* Mobile App Container */
+        .app-container {
+            max-width: 480px;
+            margin: 0 auto;
+            background-color: white;
+            min-height: 100vh;
+            box-shadow: 0 0 20px rgba(0,0,0,0.05);
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -5px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #ff7e5f;
+            border: 2px solid white;
+        }
+        .checkbox-custom:checked + label {
+            text-decoration: line-through;
+            color: #9ca3af;
+        }
+        .tab-btn.active {
+            border-bottom: 3px solid #ff7e5f;
+            color: #ff7e5f;
+            font-weight: 600;
+        }
+        .section-content {
+            display: none;
+            animation: fadeIn 0.3s ease-in-out;
+        }
+        .section-content.active {
+            display: block;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(5px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+
+<div class="app-container relative pb-20">
+    
+    <!-- Header Area -->
+    <div class="bg-gradient-to-r from-sunset-500 to-sunset-600 text-white p-6 rounded-b-3xl shadow-md">
+        <div class="flex justify-between items-center mb-4">
+            <h1 class="text-2xl font-bold tracking-wide">Touring Trip 🏍️</h1>
+            <span class="bg-white/20 px-3 py-1 rounded-full text-sm font-medium"><i class="far fa-calendar-alt mr-1"></i> 21 Jun 26</span>
+        </div>
+        <p class="text-sm opacity-90"><i class="fas fa-map-marker-alt mr-2"></i>Pamulang <i class="fas fa-arrow-right mx-1 text-xs"></i> Karang Hawu</p>
+        <p class="text-sm opacity-90 mt-1"><i class="fas fa-home mr-2"></i>Transit Homestay (Day Use)</p>
+    </div>
+
+    <!-- Navigation Tabs -->
+    <div class="flex justify-around bg-white border-b sticky top-0 z-10">
+        <button onclick="showSection('itinerary')" class="tab-btn active flex-1 py-4 text-sm text-gray-500 text-center transition-all">
+            <i class="fas fa-clock block mb-1 text-lg"></i> Jadwal
+        </button>
+        <button onclick="showSection('games')" class="tab-btn flex-1 py-4 text-sm text-gray-500 text-center transition-all">
+            <i class="fas fa-dice block mb-1 text-lg"></i> Games
+        </button>
+        <button onclick="showSection('budget')" class="tab-btn flex-1 py-4 text-sm text-gray-500 text-center transition-all">
+            <i class="fas fa-wallet block mb-1 text-lg"></i> Biaya
+        </button>
+        <button onclick="showSection('packing')" class="tab-btn flex-1 py-4 text-sm text-gray-500 text-center transition-all">
+            <i class="fas fa-box block mb-1 text-lg"></i> Bawaan
+        </button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="p-6">
+
+        <!-- 1. ITINERARY SECTION -->
+        <div id="itinerary" class="section-content active">
+            <h2 class="text-xl font-bold mb-6 text-sunset-900"><i class="fas fa-route mr-2"></i>Rencana Perjalanan</h2>
+            
+            <div class="relative border-l-2 border-sunset-100 ml-3 space-y-6">
+                <!-- Timeline Items -->
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">04:30 - 05:00</p>
+                    <h3 class="font-semibold text-lg">Persiapan Akhir</h3>
+                    <p class="text-sm text-gray-600 mt-1">Pemanasan motor, cek tekanan ban, packing akhir ke box motor.</p>
+                </div>
+                
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">05:00 - 07:00</p>
+                    <h3 class="font-semibold text-lg">Otw Sesi 1 (Pamulang - Bogor)</h3>
+                    <p class="text-sm text-gray-600 mt-1">Jalanan masih lengang dan udara segar.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">07:00 - 07:45</p>
+                    <h3 class="font-semibold text-lg">Sarapan & Rest <i class="fas fa-coffee text-amber-600"></i></h3>
+                    <p class="text-sm text-gray-600 mt-1">Berhenti di Cicurug/Cibadak. Sarapan bubur/nasi kuning & luruskan punggung.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">07:45 - 09:30</p>
+                    <h3 class="font-semibold text-lg">Otw Sesi 2 (Cicurug - Pelabuhan Ratu)</h3>
+                    <p class="text-sm text-gray-600 mt-1">Lanjut riding santai sampai turun ke arah pantai.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot bg-ocean-500 border-ocean-500"></div>
+                    <p class="text-xs font-bold text-ocean-600">09:30 - 10:30</p>
+                    <h3 class="font-semibold text-lg">Tiba & Istirahat di Homestay <i class="fas fa-bed text-blue-500"></i></h3>
+                    <p class="text-sm text-gray-600 mt-1">Check-in day use. Taruh barang berat, ngadem sebentar, dan bersih-bersih wajah.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">10:30 - 11:30</p>
+                    <h3 class="font-semibold text-lg">Setup Piknik & Ngopi <i class="fas fa-campground text-green-600"></i></h3>
+                    <p class="text-sm text-gray-600 mt-1">Menuju bibir pantai. Gelar meja, kursi lipat, dan seduh kopi pagi dengan view ombak.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">11:30 - 13:00</p>
+                    <h3 class="font-semibold text-lg">Nge-Grill Time! <i class="fas fa-fire text-red-500"></i></h3>
+                    <p class="text-sm text-gray-600 mt-1">Keluarkan kompor & grill pan. Waktunya masak daging, sosis, untuk makan siang.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">13:00 - 15:30</p>
+                    <h3 class="font-semibold text-lg">Games & Quality Time</h3>
+                    <p class="text-sm text-gray-600 mt-1">Main games seru. Kalau terlalu panas, bisa kembali ke homestay sebentar untuk rebahan nyaman.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">15:30 - 17:30</p>
+                    <h3 class="font-semibold text-lg">Jalan-jalan Karang & Ngopi Sore</h3>
+                    <p class="text-sm text-gray-600 mt-1">Eksplorasi spot foto di Karang Hawu. Cuaca sudah lebih teduh.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot bg-sunset-600 border-sunset-600"></div>
+                    <p class="text-xs font-bold text-sunset-600">17:30 - 18:15</p>
+                    <h3 class="font-semibold text-lg">Sunset View 🌅</h3>
+                    <p class="text-sm text-gray-600 mt-1">Golden hour. Duduk santai menikmati matahari terbenam.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot bg-ocean-500 border-ocean-500"></div>
+                    <p class="text-xs font-bold text-ocean-600">18:15 - 19:00</p>
+                    <h3 class="font-semibold text-lg">Bersih-bersih di Homestay</h3>
+                    <p class="text-sm text-gray-600 mt-1">Kembali ke homestay, mandi yang bersih (handuk & sabun aman!), packing akhir ke motor, dan Check-out.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">19:00 - 21:00</p>
+                    <h3 class="font-semibold text-lg">Perjalanan Pulang Sesi 1</h3>
+                    <p class="text-sm text-gray-600 mt-1">Riding malam hari (Karang Hawu - Cibadak). Antisipasi jalanan menanjak & macet akhir pekan.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">21:00 - 21:45</p>
+                    <h3 class="font-semibold text-lg">Makan Malam & Rest</h3>
+                    <p class="text-sm text-gray-600 mt-1">Makan malam yang hangat (Sate / Pecel Lele) untuk isi energi dan melawan angin malam.</p>
+                </div>
+
+                <div class="relative pl-6">
+                    <div class="timeline-dot"></div>
+                    <p class="text-xs font-bold text-sunset-500">21:45 - 23:30</p>
+                    <h3 class="font-semibold text-lg">Tiba di Rumah 🏠</h3>
+                    <p class="text-sm text-gray-600 mt-1">Melanjutkan sisa perjalanan hingga tiba kembali di Alam Asri Villa Dago Pamulang dengan selamat.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 2. GAMES SECTION -->
+        <div id="games" class="section-content">
+            <h2 class="text-xl font-bold mb-4 text-sunset-900"><i class="fas fa-dice mr-2"></i>Games Pantai</h2>
+            <p class="text-sm text-gray-500 mb-6">Ide games seru tanpa alat ribet untuk dimainkan di pinggir pantai atau di homestay:</p>
+            
+            <div class="grid gap-4">
+                <div class="bg-orange-50 p-4 rounded-xl shadow-sm border border-orange-100">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-sunset-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">1</div>
+                        <h3 class="font-semibold text-lg">Truth or Dare (Couple Edition)</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Siapkan pertanyaan mendalam lucu-lucuan. Dare-nya bisa konyol seperti nyanyi di pinggir laut atau pose lucu.</p>
+                </div>
+
+                <div class="bg-blue-50 p-4 rounded-xl shadow-sm border border-blue-100">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-ocean-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">2</div>
+                        <h3 class="font-semibold text-lg">Tebak Rasa (Blind Taste)</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Tutup mata pasangan, suapi cemilan/minuman secara acak. Yang paling banyak salah tebak, wajib nyuci alat grill!</p>
+                </div>
+
+                <div class="bg-yellow-50 p-4 rounded-xl shadow-sm border border-yellow-100">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-yellow-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">3</div>
+                        <h3 class="font-semibold text-lg">Tic-Tac-Toe Pasir</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Gambar kotak di pasir basah. Pakai kerang untuk 'O' dan batu kecil untuk 'X'. Yang kalah traktir makan malam.</p>
+                </div>
+
+                <div class="bg-green-50 p-4 rounded-xl shadow-sm border border-green-100">
+                    <div class="flex items-center mb-2">
+                        <div class="bg-green-500 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold mr-3">4</div>
+                        <h3 class="font-semibold text-lg">Skipping Stones</h3>
+                    </div>
+                    <p class="text-sm text-gray-600 pl-11">Cari batu pipih, adu lempar batu ke air laut siapa yang pantulannya paling banyak. Simple tapi nagih!</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 3. BUDGET SECTION -->
+        <div id="budget" class="section-content">
+            <h2 class="text-xl font-bold mb-4 text-sunset-900"><i class="fas fa-wallet mr-2"></i>Estimasi Biaya</h2>
+            <p class="text-sm text-gray-500 mb-4">Estimasi untuk 2 orang (belum termasuk biaya sewa homestay karena sudah ada).</p>
+
+            <div class="bg-white rounded-xl shadow-sm border overflow-hidden">
+                <table class="w-full text-sm text-left text-gray-600">
+                    <thead class="bg-gray-50 text-gray-700 uppercase">
+                        <tr>
+                            <th class="px-4 py-3">Keperluan</th>
+                            <th class="px-4 py-3 text-right">Est. Biaya (Rp)</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-gray-200">
+                        <tr>
+                            <td class="px-4 py-3">Bensin (Pertamax PP ±250km)</td>
+                            <td class="px-4 py-3 text-right font-medium">90.000</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Tiket Pantai & Parkir</td>
+                            <td class="px-4 py-3 text-right font-medium">40.000</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Bahan Grill (Daging, Sosis, Saus)</td>
+                            <td class="px-4 py-3 text-right font-medium">120.000</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Logistik (Gas kaleng, Kopi, Air, Cemilan)</td>
+                            <td class="px-4 py-3 text-right font-medium">70.000</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Makan di Jalan (Pagi & Malam)</td>
+                            <td class="px-4 py-3 text-right font-medium">120.000</td>
+                        </tr>
+                        <tr>
+                            <td class="px-4 py-3">Lain-lain / Dana Darurat</td>
+                            <td class="px-4 py-3 text-right font-medium">60.000</td>
+                        </tr>
+                        <tr class="bg-sunset-50 font-bold text-sunset-900">
+                            <td class="px-4 py-4">TOTAL ESTIMASI</td>
+                            <td class="px-4 py-4 text-right text-lg">Rp 500.000</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 bg-blue-50 text-blue-800 text-xs p-3 rounded-lg flex items-start">
+                <i class="fas fa-info-circle mt-1 mr-2"></i>
+                <p>Tips: Siapkan uang tunai pecahan Rp2.000, Rp5.000, dan Rp10.000 untuk mempermudah bayar parkir dadakan atau toilet.</p>
+            </div>
+        </div>
+
+        <!-- 4. PACKING LIST SECTION -->
+        <div id="packing" class="section-content">
+            <h2 class="text-xl font-bold mb-4 text-sunset-900"><i class="fas fa-box-open mr-2"></i>Checklist Bawaan</h2>
+            <p class="text-sm text-gray-500 mb-4">Klik/tap item untuk mencentang. Atur barang di box motor & bagasi dengan efisien.</p>
+
+            <!-- Box Motor Area -->
+            <div class="mb-6">
+                <h3 class="font-semibold text-gray-800 bg-gray-100 px-3 py-2 rounded-lg mb-3">Di Box Motor (Alat Piknik & Masak)</h3>
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">2 Kursi Lipat & 1 Meja Lipat</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Kompor Portable & Gas Kaleng</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Grill Pan / Teflon, Jepitan & Gunting</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Piring, Gelas, Sendok, Sumpit</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Tisu Kering, Tisu Basah & Kantong Sampah</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium flex-1">Bahan Grill & Kopi (Dalam cool bag)</span>
+                    </label>
+                </div>
+            </div>
+
+            <!-- Barang Pribadi -->
+            <div>
+                <h3 class="font-semibold text-gray-800 bg-gray-100 px-3 py-2 rounded-lg mb-3 flex justify-between items-center">
+                    Di Ransel / Bawah Jok
+                    <span class="text-xs font-normal text-green-600"><i class="fas fa-check-circle"></i> Handuk/Sabun di Homestay</span>
+                </h3>
+                <div class="space-y-2">
+                    <label class="flex items-center space-x-3 p-2 bg-red-50 border border-red-200 rounded-lg active:bg-red-100 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-red-500 rounded focus:ring-red-500 border-gray-300">
+                        <span class="text-sm font-bold text-red-700">Jas Hujan (2 Set) - Wajib!</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Pakaian Ganti (Baju & Celana)</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Sandal Jepit Pantai</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Sunblock, Topi, Kacamata Hitam</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Obat Pribadi & Tolak Angin</span>
+                    </label>
+                    <label class="flex items-center space-x-3 p-2 bg-white border rounded-lg active:bg-gray-50 transition">
+                        <input type="checkbox" class="checkbox-custom w-5 h-5 text-sunset-500 rounded focus:ring-sunset-500 border-gray-300">
+                        <span class="text-sm font-medium">Powerbank & Kabel Charger</span>
+                    </label>
+                </div>
+            </div>
+
+            <div class="mt-6 flex justify-center">
+                <button onclick="resetCheckboxes()" class="text-sm text-gray-500 hover:text-sunset-500 underline">Reset Checklist</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    // Tab switching logic
+    function showSection(sectionId) {
+        // Hide all sections
+        document.querySelectorAll('.section-content').forEach(el => {
+            el.classList.remove('active');
+        });
+        
+        // Remove active class from all tabs
+        document.querySelectorAll('.tab-btn').forEach(el => {
+            el.classList.remove('active');
+        });
+
+        // Show target section and activate target tab
+        document.getElementById(sectionId).classList.add('active');
+        event.currentTarget.classList.add('active');
+    }
+
+    // Reset checkboxes
+    function resetCheckboxes() {
+        document.querySelectorAll('.checkbox-custom').forEach(cb => {
+            cb.checked = false;
+        });
+    }
+
+    // Optional: Save checkbox state to localStorage so it doesn't reset when refreshed
+    document.querySelectorAll('.checkbox-custom').forEach((checkbox, index) => {
+        // Load saved state
+        const saved = localStorage.getItem('trip_karang_hawu_item_' + index);
+        if(saved === 'true') checkbox.checked = true;
+
+        // Save state on change
+        checkbox.addEventListener('change', (e) => {
+            localStorage.setItem('trip_karang_hawu_item_' + index, e.target.checked);
+        });
+    });
+
+    // Override reset to clear localStorage too
+    const originalReset = resetCheckboxes;
+    resetCheckboxes = function() {
+        originalReset();
+        document.querySelectorAll('.checkbox-custom').forEach((_, index) => {
+            localStorage.removeItem('trip_karang_hawu_item_' + index);
+        });
+    }
+</script>
+
+</body>
+</html>
