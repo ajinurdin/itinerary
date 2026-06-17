@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Touring Trip Pamulang - Karang Hawu</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Poppins:wght@500;700;800&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Poppins', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0fdf4',
+                            100: '#dcfce7',
+                            500: '#22c55e',
+                            600: '#16a34a',
+                            900: '#14532d',
+                        },
+                        sunset: {
+                            400: '#fb923c',
+                            500: '#f97316',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            /* Foto background jalanan alam yang indah untuk tema touring */
+            background-image: url('https://images.unsplash.com/photo-1469854523086-cc02fe5d8800?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-gray-800 antialiased flex flex-col min-h-screen">
+
+    <!-- Hero Section -->
+    <header class="relative hero-bg text-white overflow-hidden min-h-[80vh] flex items-center">
+        <!-- Overlay Gradient Gelap agar tulisan terbaca -->
+        <div class="absolute inset-0 bg-gradient-to-r from-gray-900 via-gray-900/80 to-gray-900/30"></div>
+        
+        <div class="relative max-w-6xl mx-auto px-6 py-20 w-full z-10">
+            <div class="max-w-3xl">
+                <!-- Badge Tanggal -->
+                <div class="inline-flex items-center space-x-2 py-2 px-4 rounded-full bg-white/10 border border-white/20 backdrop-blur-md text-sm font-semibold mb-8">
+                    <span class="w-2 h-2 rounded-full bg-sunset-500 animate-pulse"></span>
+                    <span>21 Juni 2026</span>
+                </div>
+                
+                <!-- Main Title dengan Gradasi -->
+                <h1 class="text-5xl md:text-7xl font-display font-bold mb-6 leading-tight text-transparent bg-clip-text bg-gradient-to-r from-white to-gray-300 drop-shadow-sm">
+                    Touring Trip<br>
+                    <span class="text-sunset-400">Karang Hawu</span>
+                </h1>
+                
+                <p class="text-lg md:text-xl mb-10 text-gray-300 font-light leading-relaxed max-w-xl">
+                    Aplikasi web pendamping perjalanan touring sepeda motor berdua dari Pamulang ke Pelabuhan Ratu. Cek jadwal, budget, dan checklist bawaan box motor langsung dari smartphone kamu!
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <!-- Main Call to Action Button -->
+                    <a href="https://ajinurdin.github.io/itinerary/trip_karang_hawu.html" class="inline-flex items-center justify-center bg-gradient-to-r from-sunset-500 to-orange-600 text-white font-bold text-lg py-4 px-8 rounded-full shadow-lg hover:shadow-orange-500/30 transition-all transform hover:-translate-y-1">
+                        Buka Web Itinerary <i class="fas fa-arrow-right ml-3"></i>
+                    </a>
+                    <!-- Secondary Button -->
+                    <a href="#fitur" class="inline-flex items-center justify-center bg-white/10 hover:bg-white/20 border border-white/30 text-white font-semibold text-lg py-4 px-8 rounded-full backdrop-blur-sm transition-all">
+                        Lihat Fitur
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bottom Wave Decor -->
+        <div class="absolute bottom-0 w-full overflow-hidden leading-none">
+            <svg class="relative block w-[calc(100%+1.3px)] h-[40px] md:h-[70px]" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V120H0V95.8C59.71,118,130.9,122.9,190.5,114.16,236.4,107.5,280.4,85.2,321.39,56.44Z" class="fill-slate-50"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Features Section -->
+    <section id="fitur" class="flex-grow max-w-6xl mx-auto px-6 py-24">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-4xl font-display font-bold text-gray-900 mb-4">✨ Fitur Utama Aplikasi</h2>
+            <p class="text-gray-500 max-w-2xl mx-auto text-lg">Semua yang kalian butuhkan untuk perjalanan yang terencana, romantis, dan menyenangkan dalam satu genggaman.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Feature 1 -->
+            <div class="group relative bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-blue-400 to-blue-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-14 h-14 bg-blue-50 text-blue-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-stopwatch"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3 text-gray-800">Countdown Timer</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">Penghitung waktu mundur yang presisi menuju waktu keberangkatan. Bikin makin gak sabar buat touring!</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="group relative bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-brand-400 to-brand-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-14 h-14 bg-brand-50 text-brand-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-route"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3 text-gray-800">Jadwal (Itinerary)</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">Timeline rapi dari mulai panasin motor, riding santai, nge-grill di pantai, sampai nikmatin sunset bareng.</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="group relative bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-sunset-400 to-sunset-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-14 h-14 bg-orange-50 text-sunset-500 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-dice"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3 text-gray-800">Ide Games Couple</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">Rekomendasi permainan seru dan romantis tanpa alat ribet biar nggak bosen saat nyantai di pinggir laut.</p>
+            </div>
+
+            <!-- Feature 4 -->
+            <div class="group relative bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 transform hover:-translate-y-2 border border-gray-100">
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-yellow-400 to-yellow-500 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="w-14 h-14 bg-yellow-50 text-yellow-600 rounded-2xl flex items-center justify-center text-2xl mb-6 group-hover:scale-110 transition-transform">
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <h3 class="text-xl font-display font-bold mb-3 text-gray-800">Estimasi Biaya</h3>
+                <p class="text-gray-500 leading-relaxed text-sm">Rincian transparan untuk budget bensin, bahan grill, tiket, sampai dana darurat. Touring jadi lebih tenang!</p>
+            </div>
+
+            <!-- Feature 5 -->
+            <div class="group relative bg-white rounded-3xl p-8 shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] transition-all duration-300 transform hover:-translate-y-2 border border-gray-100 md:col-span-2 lg:col-span-2">
+                <div class="absolute inset-x-0 top-0 h-1 bg-gradient-to-r from-purple-400 to-purple-600 rounded-t-3xl opacity-0 group-hover:opacity-100 transition-opacity"></div>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-6">
+                    <div class="w-14 h-14 bg-purple-50 text-purple-600 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0 group-hover:scale-110 transition-transform">
+                        <i class="fas fa-box-open"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-xl font-display font-bold mb-2 text-gray-800">Smart Checklist Bawaan Motor</h3>
+                        <p class="text-gray-500 leading-relaxed text-sm">Nggak ada lagi cerita barang ketinggalan. Daftar bawaan interaktif yang otomatis tersimpan di HP. Tinggal centang saat menyusun alat grill dan baju ke dalam box motor!</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 border-t border-gray-800 py-12 text-center mt-auto relative overflow-hidden">
+        <!-- Dot Pattern -->
+        <div class="absolute inset-0 opacity-5" style="background-image: radial-gradient(circle at 2px 2px, white 1px, transparent 0); background-size: 24px 24px;"></div>
+        
+        <div class="max-w-4xl mx-auto px-6 relative z-10">
+            <div class="w-16 h-1 bg-gradient-to-r from-sunset-500 to-orange-600 mx-auto mb-8 rounded-full"></div>
+            <h2 class="text-2xl font-display font-bold text-white mb-4">Siap untuk Petualangan?</h2>
+            <p class="text-gray-400 font-light mb-8 max-w-lg mx-auto text-sm">Pastikan motor dalam kondisi prima, selalu gunakan perlengkapan keselamatan, dan nikmati setiap momen perjalanan bersama.</p>
+            <p class="text-gray-500 text-xs tracking-wider uppercase">Dibuat untuk Touring Karang Hawu 🌅</p>
+        </div>
+    </footer>
+
+</body>
+</html>
